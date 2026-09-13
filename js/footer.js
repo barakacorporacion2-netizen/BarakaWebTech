@@ -7,7 +7,20 @@ if (!footerContainer) {
     return;
 }
 
-fetch("../footer/footer.html")
+const rutaBase = "/BarakaWebTech/";
+
+if (!document.querySelector('link[data-footer-css]')) {
+
+    const linkCSS = document.createElement("link");
+
+    linkCSS.rel = "stylesheet";
+    linkCSS.href = rutaBase + "estilos-css/footer.css";
+    linkCSS.setAttribute("data-footer-css", "true");
+
+    document.head.appendChild(linkCSS);
+}
+
+fetch(rutaBase + "footer/footer.html")
     .then(function (response) {
 
         if (!response.ok) {
@@ -21,7 +34,13 @@ fetch("../footer/footer.html")
 
         footerContainer.innerHTML = html;
 
-        document.querySelectorAll(".cerrar-modal").forEach(function (boton) {
+        const logo = footerContainer.querySelector(".footer-logo img");
+
+        if (logo) {
+            logo.src = rutaBase + "assets/img/logoblanco.png";
+        }
+
+        footerContainer.querySelectorAll(".cerrar-modal").forEach(function (boton) {
 
             boton.onclick = function () {
 
@@ -39,7 +58,7 @@ fetch("../footer/footer.html")
 
         });
 
-        document.querySelectorAll(".modal-legal").forEach(function (modal) {
+        footerContainer.querySelectorAll(".modal-legal").forEach(function (modal) {
 
             modal.onclick = function (event) {
 
