@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos-css/contactenos.css">
+    <link rel="icon" href="../assets/img/logo.png">
+</head>
+
+<body>
+
+    <!-- ====== HEADER (RENDERIZADO POR JS) ====== -->
+   
+    <div id="header-container"></div>
+
+  <!-- BOTÓN MENÚ -->
+
+<div class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Abrir menú">
+    <img src="../assets/img/barakalogo.png" alt="Logo Baraka">
+    <span class="menu-label">MENÚ</span>
+    <span class="menu-indicador">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</div>
+
+<!-- MENÚ -->
+
+<nav class="menu" id="menu">
+
+    <a href="../inicio/index.html">Inicio</a>
+
+    <a href="../nosotros/nosotros.html">Nosotros</a>
+
+    <a href="../servicios/servicios.html">Cursos</a>
+
+    <a href="../catalogo/catalogo.html">Emprendedoras</a>
+
+    <a href="../preguntas-frecuentes/Preguntas.html">Preguntas frecuentes</a>
+
+    <a href="../contactenos/contactenos.html">Contáctanos</a>
+
+</nav>
+
+    <section class="contacto">
+
+        <h1>Contáctenos</h1>
+
+        <p class="descripcion">
+            Estamos aquí para ayudarte.
+            <br>
+            Escríbenos y te responderemos lo antes posible.
+        </p>
+
+        <div class="contenedor">
+
+            <!-- INFORMACIÓN -->
+            <div class="informacion">
+
+              <div class="mapa">
+
+         <iframe
+          src="https://www.google.com/maps?q=Corporación+Baraka+Bogotá&output=embed"
+          loading="lazy"
+           allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+         </iframe>
+
+        </div>
+
+                <div class="datos">
+
+                    <p>
+                        📧 Correo electrónico
+                        <br>
+                        barakacorporacion@gmail.com
+                    </p>
+
+                    <p>
+                        ☎ Teléfono
+                        <br>
+                        +57 3054643307
+                    </p>
+
+                    <p>
+                        📍 Ubicación
+                        <br>
+                        Bogotá, Colombia
+                    </p>
+
+                </div>
+
+            </div>
+
+         <!-- FORMULARIO -->
+<div class="formulario">
+
+    <form
+        id="formulario"
+        action="https://formspree.io/f/mrewbabj"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate>
+
+        <!-- NOMBRE -->
+        <label for="nombre">
+            Nombre completo
+        </label>
+
+        <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ejemplo: María Fernanda Gómez"
+            minlength="5"
+            maxlength="50"
+            autocomplete="name"
+            required>
+
+        <small id="errorNombre"></small>
+
+
+        <!-- CORREO -->
+        <label for="correo">
+            Correo electrónico
+        </label>
+
+        <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="ejemplo@gmail.com"
+            maxlength="100"
+            autocomplete="email"
+            required>
+
+        <small id="errorCorreo"></small>
+
+
+        <!-- TELÉFONO -->
+        <label for="telefono">
+            Teléfono
+        </label>
+
+        <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Entre 7 y 10 números"
+            minlength="7"
+            maxlength="10"
+            inputmode="numeric"
+            autocomplete="tel"
+            required>
+
+        <small id="errorTelefono"></small>
+
+
+        <!-- MENSAJE -->
+        <label for="mensaje">
+            Mensaje
+        </label>
+
+        <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Escriba aquí su mensaje..."
+            minlength="15"
+            maxlength="100"
+            required></textarea>
+
+        <small id="errorMensaje"></small>
+
+
+        <!-- PDF -->
+        <label for="archivo">
+            Adjuntar documento PDF
+        </label>
+
+        <input
+            type="file"
+            id="archivo"
+            name="archivo"
+            accept=".pdf,application/pdf">
+
+        <small id="errorArchivo"></small>
+
+
+        <!-- BOTÓN -->
+        <button type="submit">
+            Enviar Mensaje
+        </button>
+
+
+        <!-- MENSAJE GENERAL -->
+        <p id="mensajeFormulario"></p>
+
+    </form>
+
+</div>
+
+        </div>
+
+    </section>
+
+  
+    
+    <!-- ================= FOOTER ================= -->
+
+<div id="footer-container"></div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+    <script src="../JS/contactenos.js"></script>
+    <script src="../js/footer.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

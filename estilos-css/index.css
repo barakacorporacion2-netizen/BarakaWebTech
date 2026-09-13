@@ -1,0 +1,791 @@
+/* ===============================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(236, 72, 153, 0.08), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(0, 252, 248, 0.08), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(108, 43, 217, 0.07), transparent 30%),
+        #faf9ff;
+    color: #1F1F1F;
+}
+
+
+/* ===============================
+   DECORACIÓN FLOTANTE BARAKA
+================================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 95px;
+    height: 95px;
+    background-image: url("../assets/img/barakalogo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 0;
+    animation: logoFlotante 8s ease-in-out infinite;
+}
+
+body::before {
+    top: 22%;
+    left: -20px;
+}
+
+body::after {
+    bottom: 15%;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    animation-delay: -4s;
+}
+
+@keyframes logoFlotante {
+
+    0% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+}
+
+
+
+/* ===============================
+   HERO
+================================= */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 70px 10%;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 43, 217, 0.07),
+            rgba(236, 72, 153, 0.06),
+            rgba(0, 252, 248, 0.05)
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(236, 72, 153, 0.08);
+    top: -150px;
+    left: -100px;
+    filter: blur(10px);
+    animation: moverBurbuja 9s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(0, 252, 248, 0.07);
+    right: -80px;
+    bottom: -100px;
+    filter: blur(10px);
+    animation: moverBurbuja 11s ease-in-out infinite reverse;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+@keyframes moverBurbuja {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -25px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* ===============================
+   VIDEO HERO
+================================= */
+
+.hero-carousel {
+    flex: 1;
+    height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(108, 43, 217, 0.12);
+    box-shadow:
+        0 15px 40px rgba(76, 29, 149, 0.14),
+        0 0 30px rgba(236, 72, 153, 0.08);
+    animation: entradaVideo 1s ease;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+}
+
+@keyframes entradaVideo {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ===============================
+   TEXTO HERO
+================================= */
+
+.hero-text {
+    flex: 1;
+    animation: entradaTexto 1s ease;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(
+        90deg,
+        #4C1D95,
+        #EC4899,
+        #00aaa8
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+@keyframes entradaTexto {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ===============================
+   INFORMACIÓN INSTITUCIONAL
+================================= */
+
+.informacion-institucional {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 55px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 43, 217, 0.08),
+            rgba(236, 72, 153, 0.06),
+            rgba(0, 252, 248, 0.06)
+        );
+}
+
+.contenido-institucional {
+    position: relative;
+    width: 90%;
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 35px 45px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 22px;
+    box-shadow:
+        0 15px 40px rgba(76, 29, 149, 0.10),
+        inset 0 0 25px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: 0.4s ease;
+}
+
+.contenido-institucional:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 45px rgba(76, 29, 149, 0.15),
+        0 0 25px rgba(236, 72, 153, 0.08);
+}
+
+.contenido-institucional > i {
+    min-width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(108, 43, 217, 0.15),
+        rgba(236, 72, 153, 0.15)
+    );
+    color: #6C2BD9;
+    font-size: 30px;
+    animation: pulsoIcono 3s ease-in-out infinite;
+}
+
+@keyframes pulsoIcono {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+.contenido-institucional div {
+    flex: 1;
+}
+
+.contenido-institucional h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #4C1D95;
+}
+
+.contenido-institucional p {
+    margin: 0 0 10px;
+    max-width: 800px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.contenido-institucional span {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 800;
+    color: #EC4899;
+}
+
+
+/* ===============================
+   SECCIÓN OPORTUNIDADES
+================================= */
+
+.seccionSeguridad {
+    position: relative;
+    z-index: 1;
+    padding: 70px 10%;
+    text-align: center;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0),
+            rgba(108, 43, 217, 0.035)
+        );
+}
+
+.seccionSeguridad h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #4C1D95;
+}
+
+.contenedorSeguridad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.tarjetasSeguridad {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 30px 18px;
+    box-shadow: 0 10px 25px rgba(76, 29, 149, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    text-align: center;
+}
+
+.tarjetasSeguridad::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -35px;
+    right: -30px;
+    background: rgba(236, 72, 153, 0.10);
+}
+
+.tarjetasSeguridad:nth-child(even)::before {
+    background: rgba(0, 252, 248, 0.10);
+}
+
+.tarjetasSeguridad:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 18px 35px rgba(76, 29, 149, 0.13),
+        0 0 25px rgba(236, 72, 153, 0.08);
+}
+
+.tarjetasSeguridad i {
+    position: relative;
+    z-index: 1;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.iconoRosado {
+    color: #EC4899;
+}
+
+.iconoCeleste {
+    color: #00aaa8;
+}
+
+.tarjetasSeguridad h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 17px;
+    margin-bottom: 9px;
+    color: #4C1D95;
+}
+
+.tarjetasSeguridad p {
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* ===============================
+   COMO FUNCIONA
+================================= */
+
+.seccionPasos {
+    position: relative;
+    z-index: 1;
+    padding: 75px 10%;
+    text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(236, 72, 153, 0.035),
+            rgba(0, 252, 248, 0.035),
+            rgba(108, 43, 217, 0.045)
+        );
+}
+
+.seccionPasos h2 {
+    font-size: 30px;
+    margin-bottom: 45px;
+    color: #4C1D95;
+}
+
+.containerComoFunciona {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.pasos {
+    width: 200px;
+    text-align: center;
+    transition: 0.35s ease;
+}
+
+.pasos:hover {
+    transform: translateY(-8px);
+}
+
+.iconoCircular {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    animation: flotarIcono 4s ease-in-out infinite;
+}
+
+.pasos:nth-child(1) .iconoCircular {
+    animation-delay: 0s;
+}
+
+.pasos:nth-child(3) .iconoCircular {
+    animation-delay: -1s;
+}
+
+.pasos:nth-child(5) .iconoCircular {
+    animation-delay: -2s;
+}
+
+.pasos:nth-child(7) .iconoCircular {
+    animation-delay: -3s;
+}
+
+@keyframes flotarIcono {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+.iconoCircular.morado {
+    background: rgba(108, 43, 217, 0.85);
+    color: #ffffff;
+}
+
+.iconoCircular.rosado {
+    background: rgba(236, 72, 153, 0.85);
+    color: #ffffff;
+}
+
+.pasos h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #4C1D95;
+}
+
+.pasos p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.puntos {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.puntos span {
+    width: 6px;
+    height: 6px;
+    background: rgba(76, 29, 149, 0.35);
+    border-radius: 50%;
+    animation: puntoPulso 2s infinite ease-in-out;
+}
+
+.puntos span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.puntos span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes puntoPulso {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+
+}
+
+
+/* ===============================
+   ACTUALIDAD BARAKA
+================================= */
+
+.news-section {
+    position: relative;
+    z-index: 1;
+    padding: 70px 10%;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(236, 72, 153, 0.05),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(0, 252, 248, 0.05),
+            transparent 30%
+        );
+}
+
+.news-section h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #4C1D95;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.news-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(76, 29, 149, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    text-align: left;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 18px 35px rgba(76, 29, 149, 0.14),
+        0 0 25px rgba(236, 72, 153, 0.08);
+}
+.news-card img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    background:var(--blanco);
+    border-radius:16px 16px 0 0;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+.news-card h3 {
+    padding: 12px 15px 0;
+    font-size: 16px;
+    color: #4C1D95;
+}
+
+.news-card p {
+    padding: 5px 15px 17px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* ===============================
+   EFECTO SUAVE EN SECCIONES
+================================= */
+
+.seccionSeguridad,
+.seccionPasos,
+.news-section,
+.informacion-institucional {
+    isolation: isolate;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+    .contenedorSeguridad {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-carousel {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .search-box {
+        margin: 20px auto;
+    }
+
+    .contenedorSeguridad {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .containerComoFunciona {
+        flex-direction: column;
+    }
+
+    .puntos {
+        transform: rotate(90deg);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .informacion-institucional {
+        padding: 40px 15px;
+    }
+
+    .contenido-institucional {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 22px;
+        gap: 20px;
+    }
+
+    .contenido-institucional h2 {
+        font-size: 23px;
+    }
+
+    .contenido-institucional p {
+        font-size: 15px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 25px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .contenedorSeguridad {
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccionSeguridad,
+    .seccionPasos,
+    .news-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    body::before,
+    body::after {
+        width: 65px;
+        height: 65px;
+        opacity: 0.035;
+    }
+
+}

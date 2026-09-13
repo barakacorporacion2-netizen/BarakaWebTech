@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cursos y capacitaciones | Corporación Baraka</title>
+
+<meta
+name="description"
+content="Cursos, capacitaciones y espacios de formación de la Corporación Baraka."
+
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+>
+
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    rel="stylesheet"
+>
+
+<link rel="icon" href="../assets/img/logo.png">
+
+<link rel="stylesheet" href="servicios.css">
+
+</head>
+
+<body>
+
+  <!-- BOTÓN MENÚ -->
+
+<div class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Abrir menú">
+    <img src="../assets/img/barakalogo.png" alt="Logo Baraka">
+    <span class="menu-label">MENÚ</span>
+    <span class="menu-indicador">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</div>
+
+<!-- MENÚ -->
+
+<nav class="menu" id="menu">
+
+    <a href="../inicio/index.html">Inicio</a>
+
+    <a href="../nosotros/nosotros.html">Nosotros</a>
+
+    <a href="../servicios/servicios.html">Cursos</a>
+
+    <a href="../catalogo/catalogo.html">Emprendedoras</a>
+
+    <a href="../preguntas-frecuentes/Preguntas.html">Preguntas frecuentes</a>
+
+    <a href="../contactenos/contactenos.html">Contáctanos</a>
+
+</nav>
+
+<!-- =====================================================
+     ENCABEZADO
+====================================================== -->
+
+<header class="hero-cursos">
+
+<div class="hero-cursos-contenido">
+
+    <div class="hero-cursos-texto">
+
+        <span class="etiqueta-cursos">
+            Formación y aprendizaje
+        </span>
+
+        <h1>
+            Cursos y capacitaciones
+            para seguir creciendo.
+        </h1>
+
+        <p>
+            Encontrará espacios de formación pensados para
+            fortalecer conocimientos, desarrollar habilidades
+            y descubrir nuevas posibilidades.
+        </p>
+
+        <div class="hero-cursos-acento">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-cursos-logo">
+
+        <div class="logo-circulo">
+
+            <img
+                src="../assets/img/barakalogo.png"
+                alt="Corporación Baraka"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</header>
+
+<!-- =====================================================
+     INTRODUCCIÓN
+====================================================== -->
+
+<section class="introduccion-cursos">
+
+
+<div class="container">
+
+    <div class="introduccion-contenido">
+
+        <span class="etiqueta-seccion">
+            Espacios para aprender
+        </span>
+
+        <h2>
+            Formación que abre posibilidades
+        </h2>
+
+        <p>
+            En Baraka creamos espacios donde las personas pueden
+            fortalecer sus conocimientos, reconocer sus capacidades
+            y desarrollar habilidades que les permitan avanzar hacia
+            nuevas oportunidades.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     BUSCADOR Y FILTROS
+====================================================== -->
+
+<section class="seccion-explorar">
+
+
+<div class="container">
+
+    <div class="encabezado-explorar">
+
+        <div>
+
+            <span class="etiqueta-seccion">
+                Explore nuestra oferta
+            </span>
+
+            <h2>
+                Encuentre una formación para usted
+            </h2>
+
+        </div>
+
+        <div class="contador-cursos">
+
+            <i class="bi bi-mortarboard"></i>
+
+            <span id="cantidadServicios">
+                0
+            </span>
+
+            <span>
+                formaciones disponibles
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="buscador-cursos">
+
+        <i class="bi bi-search"></i>
+
+        <input
+            type="text"
+            id="buscarServicio"
+            placeholder="Buscar cursos o capacitaciones..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <div class="filtros-cursos">
+
+        <button
+            type="button"
+            class="filtro activo"
+            data-categoria="todos"
+        >
+            Todos
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-categoria="formacion"
+        >
+            Formación
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-categoria="emprendimiento"
+        >
+            Emprendimiento
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-categoria="tecnologia"
+        >
+            Tecnología
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-categoria="habilidades"
+        >
+            Habilidades
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     CURSOS
+====================================================== -->
+
+<main class="seccion-listado-cursos">
+
+
+<div class="container">
+
+    <div
+        class="row g-4"
+        id="contenedorServicios"
+    >
+    </div>
+
+
+    <div
+        id="sinResultados"
+        class="sin-resultados"
+        style="display:none;"
+    >
+
+        <div class="sin-resultados-icono">
+
+            <i class="bi bi-search"></i>
+
+        </div>
+
+        <h3>
+            No encontramos formaciones
+        </h3>
+
+        <p>
+            Intente realizar otra búsqueda o seleccionar
+            una categoría diferente.
+        </p>
+
+    </div>
+
+</div>
+
+
+</main>
+
+<!-- =====================================================
+     LLAMADO A LA ACCIÓN
+====================================================== -->
+
+<section class="cta-formacion">
+
+
+<div class="container">
+
+    <div class="cta-contenido">
+
+        <div class="cta-icono">
+
+            <i class="bi bi-lightbulb"></i>
+
+        </div>
+
+        <div class="cta-texto">
+
+            <span>
+                ¿Tiene algo que aprender o compartir?
+            </span>
+
+            <h2>
+                El aprendizaje también puede abrir nuevos caminos.
+            </h2>
+
+            <p>
+                Explore nuestras formaciones y encuentre
+                espacios que puedan aportar a su crecimiento.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div id="footer-container"></div>
+
+<!-- =====================================================
+     SCRIPTS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../js/footer.js"></script>
+
+<script src="servicios.js"></script>
+
+
+</script>
+
+</body>
+
+</html>

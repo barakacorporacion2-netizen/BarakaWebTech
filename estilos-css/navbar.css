@@ -1,0 +1,968 @@
+/* =======================================================
+   NAVBAR - BARAKA
+======================================================= */
+
+
+/* ===============================
+   RESET
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    padding-top:90px;
+
+    font-family:'Nunito',sans-serif;
+
+    background:#fff;
+
+}
+
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    display: block;
+}
+
+.nit-logo {
+    margin: 6px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f3efef;
+}
+
+
+
+/* ===============================
+   NAVBAR PRINCIPAL
+================================ */
+
+
+.navbar-custom{
+
+    background:#7B8A2D;
+
+    padding:12px 0;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    z-index:1000;
+
+    box-shadow:
+    0 4px 12px rgba(76,29,149,.30);
+
+    animation:slideDown .5s ease;
+
+}
+
+
+
+.navbar-custom .container{
+
+    display:flex;
+
+    align-items:center;
+
+    max-width:1320px;
+
+}
+
+
+
+/* ===============================
+   LINKS NAVBAR
+================================ */
+
+
+.navbar a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+}
+
+
+
+.navbar a:hover{
+
+    color:#F07A73;
+
+}
+
+
+
+/* ===============================
+   LOGO
+================================ */
+
+
+.logo-link{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    margin-right:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.logo-link:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+.logo-img{
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:contain;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+
+
+
+/* ===============================
+   BOTON VOLVER
+================================ */
+
+
+.btn-volver{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:1.6rem;
+
+    margin-right:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.btn-volver:hover{
+
+    color:#00FCF8;
+
+    transform:translateX(-4px);
+
+}
+
+
+
+
+
+/* ===============================
+   OCULTAR HAMBURGUESA
+================================ */
+
+
+.navbar-toggler,
+.navbar-toggler-icon{
+
+    display:none !important;
+
+}
+
+
+
+.navbar-collapse{
+
+    display:flex !important;
+
+    flex-basis:auto !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+}
+
+
+
+.collapse,
+.collapse:not(.show){
+
+    display:flex !important;
+
+}
+
+
+
+
+
+/* ===============================
+   MENU PRINCIPAL
+================================ */
+
+
+.navbar-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-left:auto;
+
+    gap:4px;
+
+}
+
+
+
+.nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+
+.nav-link{
+
+    color:#fff !important;
+
+    font-weight:700;
+
+    padding:10px 15px !important;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+
+
+.nav-link:hover{
+
+    color:#00FCF8 !important;
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateY(-2px);
+
+}
+
+
+
+.nav-link.active{
+
+    color:#00FCF8 !important;
+
+}
+
+
+
+
+
+/* ===============================
+   SEPARADOR
+================================ */
+
+
+.separador{
+
+    color:rgba(255,255,255,.30);
+
+    font-size:1.2rem;
+
+}
+
+
+
+
+
+/* ===============================
+   ICONOS
+================================ */
+
+
+.nav-icon{
+
+    display:flex !important;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:3px;
+
+}
+
+
+
+.nav-icon i{
+
+    font-size:1.55rem;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-icon span{
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+
+
+.nav-icon:hover i{
+
+    transform:scale(1.15);
+
+}
+
+
+
+
+/* =======================================================
+   DROPDOWN BARAKA - SERVICIOS + CARRITO
+======================================================= */
+
+.dropdown-menu{
+
+    background:#FAF6EE !important;
+
+    border:1px solid #E8D8B8 !important;
+
+    border-radius:15px;
+
+    min-width:240px;
+
+    padding:8px;
+
+    margin-top:10px;
+
+    box-shadow:0 10px 30px rgba(123,138,45,.25);
+
+}
+
+
+
+.dropdown-item{
+
+    color:#3B3028 !important;
+
+    font-weight:700;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    transition:.3s;
+
+}
+
+
+
+.dropdown-item i{
+
+    color:#C9A227;
+
+    width:25px;
+
+    margin-right:8px;
+
+}
+
+
+
+
+
+.dropdown-item:hover{
+
+    background:#7B8A2D !important;
+
+    color:white !important;
+
+    transform:translateX(5px);
+
+}
+
+
+
+.dropdown-item:hover i{
+
+    color:#FFD966;
+
+}
+
+
+
+
+
+/* ===============================
+   CARRITO
+================================ */
+
+
+.carrito-menu{
+
+    background:#FFFFFF !important;
+
+    border:1px solid #E8D8B8;
+
+}
+
+
+
+.carrito-menu .dropdown-header{
+
+    color:#7B8A2D;
+
+    font-weight:800;
+
+}
+
+
+
+#listaCarritoNavbar span{
+
+    color:#3B3028;
+
+}
+
+
+
+#listaCarritoNavbar strong{
+
+    color:#C9A227;
+
+}
+
+
+
+#totalCarritoNavbar{
+
+    color:#7B8A2D;
+
+    font-weight:900;
+
+}
+
+
+
+#cantidadCarrito{
+
+    background:#C9A227 !important;
+
+    color:white !important;
+
+}
+
+
+
+.carrito-menu .btn-primary{
+
+    background:#7B8A2D;
+
+    border-color:#7B8A2D;
+
+}
+
+
+
+.carrito-menu .btn-primary:hover{
+
+    background:#626E23;
+
+}
+
+
+
+.carrito-menu .btn-outline-danger{
+
+    color:#C97B84;
+
+    border-color:#C97B84;
+
+}
+
+
+
+
+
+/* Botón eliminar/vaciar */
+
+.carrito-menu .btn-outline-danger{
+
+    color:#C97B84;
+
+    border-color:#C97B84;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+}
+
+
+
+.carrito-menu .btn-outline-danger:hover{
+
+    background:#C97B84;
+
+    color:white;
+
+}
+
+
+
+
+
+/* =======================================================
+   EFECTOS GENERALES
+======================================================= */
+
+
+.nav-link,
+.logo-link,
+.btn-volver,
+.dropdown-item,
+.nav-icon i{
+
+    transition:all .3s ease;
+
+}
+
+
+
+.nav-link:hover,
+.dropdown-item:hover,
+.nav-icon:hover{
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* =======================================================
+   ANIMACIONES
+======================================================= */
+
+
+@keyframes slideDown{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+@keyframes menu{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* =======================================================
+   SCROLL DROPDOWN
+======================================================= */
+
+
+.dropdown-menu::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+
+.dropdown-menu::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+
+.dropdown-menu::-webkit-scrollbar-thumb{
+
+    background:#7B8A2D;
+
+    border-radius:20px;
+
+}
+
+
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover{
+
+    background:#C9A227;
+
+}
+
+
+
+
+
+/* =======================================================
+   FOCUS
+======================================================= */
+
+
+.nav-link:focus,
+.dropdown-item:focus,
+.btn-volver:focus{
+
+    outline:none;
+
+    box-shadow:none;
+
+}
+
+
+
+
+
+/* =======================================================
+   RESPONSIVE TABLET
+======================================================= */
+
+
+@media(max-width:992px){
+
+
+    .navbar-custom{
+
+        padding:10px 0;
+
+    }
+
+
+
+    .logo-link{
+
+        margin-right:12px;
+
+    }
+
+
+
+    .logo-img{
+
+        width:60px;
+
+        height:60px;
+
+    }
+
+
+
+    .btn-volver{
+
+        font-size:1.4rem;
+
+        margin-right:12px;
+
+    }
+
+
+
+    .navbar-nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+
+
+    .nav-link{
+
+        font-size:.90rem;
+
+        padding:8px 10px !important;
+
+    }
+
+
+
+    .nav-icon{
+
+        flex-direction:row;
+
+        gap:6px;
+
+    }
+
+
+
+    .nav-icon i{
+
+        font-size:1.3rem;
+
+    }
+
+
+
+    .nav-icon span{
+
+        font-size:.80rem;
+
+    }
+
+
+
+    .carrito-menu{
+
+        width:300px;
+
+    }
+
+
+}
+
+
+
+
+
+/* =======================================================
+   RESPONSIVE MÓVIL
+======================================================= */
+
+
+@media(max-width:576px){
+
+
+    body{
+
+        padding-top:75px;
+
+    }
+
+
+
+    .navbar-custom{
+
+        padding:8px 0;
+
+    }
+
+
+
+    .logo-img{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+
+
+    .btn-volver{
+
+        font-size:1.2rem;
+
+        margin-right:8px;
+
+    }
+
+
+
+    .navbar-nav{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+
+
+    .nav-link{
+
+        padding:6px 8px !important;
+
+        font-size:.80rem;
+
+    }
+
+
+
+    .nav-icon{
+
+        flex-direction:column;
+
+        gap:2px;
+
+    }
+
+
+
+    .nav-icon i{
+
+        font-size:1.15rem;
+
+    }
+
+
+
+    .nav-icon span{
+
+        font-size:.68rem;
+
+    }
+
+
+
+    .dropdown-menu{
+
+        min-width:180px;
+
+    }
+
+
+
+    .dropdown-item{
+
+        padding:10px 12px;
+
+        font-size:.90rem;
+
+    }
+
+
+
+    .carrito-menu{
+
+        width:280px;
+
+    }
+
+
+}
+
+
+
+
+
+/* =======================================================
+   AJUSTES FINALES
+======================================================= */
+
+
+.navbar-custom .navbar-nav{
+
+    gap:4px;
+
+}
+
+
+
+.navbar-custom .nav-item{
+
+    align-items:center;
+
+}
+
+
+
+.navbar-custom .dropdown-menu{
+
+    overflow:hidden;
+
+}
+
+
+
+.navbar-custom .dropdown-item:last-child{
+
+    margin-bottom:0;
+
+}
