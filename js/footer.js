@@ -1,85 +1,114 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const footerContainer = document.getElementById("footer-container");
 
-const footerContainer = document.getElementById("footer-container");
+    if (!footerContainer) {
+        return;
+    }
 
-if (!footerContainer) {
-    return;
-}
+    const rutaBase = "/BarakaWebTech/";
 
-const rutaBase = "/BarakaWebTech/";
+    const cssExistente = document.querySelector('link[data-footer-css]');
 
-if (!document.querySelector('link[data-footer-css]')) {
+    if (!cssExistente) {
 
-    const linkCSS = document.createElement("link");
+        const linkCSS = document.createElement("link");
 
-    linkCSS.rel = "stylesheet";
-    linkCSS.href = rutaBase + "estilos-css/footer.css";
-    linkCSS.setAttribute("data-footer-css", "true");
+        linkCSS.rel = "stylesheet";
+        linkCSS.href = rutaBase + "estilos-css/footer.css";
 
-    document.head.appendChild(linkCSS);
-}
+        linkCSS.setAttribute("data-footer-css", "true");
 
-fetch(rutaBase + "footer/footer.html")
-    .then(function (response) {
+        document.head.appendChild(linkCSS);
+    }
 
-        if (!response.ok) {
-            throw new Error("No se pudo cargar footer.html");
-        }
+    fetch(rutaBase + "footer/footer.html")
+        .then(function (response) {
 
-        return response.text();
+            if (!response.ok) {
+                throw new Error("No se pudo cargar footer.html");
+            }
 
-    })
-    .then(function (html) {
+            return response.text();
 
-        footerContainer.innerHTML = html;
+        })
+        .then(function (html) {
 
-        const logo = footerContainer.querySelector(".footer-logo img");
+            footerContainer.innerHTML = html;
 
-        if (logo) {
-            logo.src = rutaBase + "assets/img/logoblanco.png";
-        }
+            const logo = footerContainer.querySelector(".footer-logo img");
 
-        footerContainer.querySelectorAll(".cerrar-modal").forEach(function (boton) {
+            if (logo) {
+                logo.src = rutaBase + "assets/img/logoblanco.png";
+            }
 
-            boton.onclick = function () {
+            const enlaces = footerContainer.querySelectorAll("a");
 
-                const idModal = boton.getAttribute("data-cerrar");
+            enlaces.forEach(function (enlace) {
 
-                const modal = document.getElementById(idModal);
+                const href = enlace.getAttribute("href");
 
-                if (modal) {
-                    modal.classList.remove("activo");
+                if (!href) {
+                    return;
                 }
 
-                document.body.style.overflow = "";
+                if (
+                    href.startsWith("../") ||
+                    href.startsWith("./")
+                ) {
 
-            };
+                    let nuevaRuta = href;
 
-        });
+                    while (nuevaRuta.startsWith("../")) {
+                        nuevaRuta = nuevaRuta.substring(3);
+                    }
 
-        footerContainer.querySelectorAll(".modal-legal").forEach(function (modal) {
+                    nuevaRuta = nuevaRuta.replace("./", "");
 
-            modal.onclick = function (event) {
+                    enlace.href = rutaBase + nuevaRuta;
+                }
 
-                if (event.target === modal) {
+            });
 
-                    modal.classList.remove("activo");
+            footerContainer.querySelectorAll(".cerrar-modal").forEach(function (boton) {
+
+                boton.addEventListener("click", function () {
+
+                    const idModal = boton.getAttribute("data-cerrar");
+
+                    const modal = document.getElementById(idModal);
+
+                    if (modal) {
+                        modal.classList.remove("activo");
+                    }
 
                     document.body.style.overflow = "";
 
-                }
+                });
 
-            };
+            });
+
+            footerContainer.querySelectorAll(".modal-legal").forEach(function (modal) {
+
+                modal.addEventListener("click", function (event) {
+
+                    if (event.target === modal) {
+
+                        modal.classList.remove("activo");
+
+                        document.body.style.overflow = "";
+
+                    }
+
+                });
+
+            });
+
+        })
+        .catch(function (error) {
+
+            console.error("Error al cargar footer:", error);
 
         });
-
-    })
-    .catch(function (error) {
-
-        console.error("Error al cargar footer:", error);
-
-    });
-
 
 });
