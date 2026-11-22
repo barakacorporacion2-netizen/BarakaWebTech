@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -107,12 +108,13 @@ const cursos = [
     },
     {
         id: 2,
-        titulo: "Emprendimiento",
+        titulo: "Trabajador doméstico",
         descripcion:
-            "Fortalezca sus capacidades para transformar ideas, talentos y conocimientos en oportunidades de emprendimiento.",
-        categoria: "emprendimiento",
-        icono: "fa-solid fa-lightbulb",
-        enlace: null
+            "Aprenda conocimientos y habilidades para realizar actividades de limpieza, organización y cuidado del entorno doméstico, aplicando buenas prácticas de higiene, seguridad y responsabilidad.",
+        categoria: "formacion",
+        icono: "fa-solid fa-broom",
+        enlace:
+            "https://khadija1103.github.io/curso-Trabajador-dom-stico/"
     },
     {
         id: 3,

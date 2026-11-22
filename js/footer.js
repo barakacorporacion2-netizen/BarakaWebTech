@@ -6,7 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const rutaBase = "/BarakaWebTech/";
+    let rutaBase = "/BarakaWebTech/";
+
+    if (
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        window.location.protocol === "file:"
+    ) {
+        rutaBase = "/";
+    }
 
     const cssExistente = document.querySelector('link[data-footer-css]');
 
