@@ -269,8 +269,8 @@ function obtenerNombreCategoria(categoria) {
         formacion:
             "Formación",
 
-        emprendimiento:
-            "Emprendimiento",
+        "trabajador-domestico":
+            "Trabajador Doméstico",
 
         tecnologia:
             "Tecnología",
