@@ -116,15 +116,18 @@ const cursos = [
         enlace:
             "https://khadija1103.github.io/curso-Trabajador-dom-stico/"
     },
-    {
-        id: 3,
-        titulo: "Herramientas para el trabajo",
-        descripcion:
-            "Capacitación práctica en herramientas digitales que facilitan la organización, el análisis de información y la gestión de actividades.",
-        categoria: "tecnologia",
-        icono: "fa-solid fa-laptop",
-        enlace: null
-    },
+ 
+{
+    id: 3,
+    titulo: "Aseador de oficina",
+    descripcion:
+        "Aprenda técnicas y buenas prácticas para realizar labores de limpieza y mantenimiento de espacios de oficina, aplicando normas de higiene, seguridad y organización.",
+    categoria: "formacion",
+    icono: "fa-solid fa-broom",
+    enlace:
+        "https://barakacorporacion2-netizen.github.io/Aseador-de-oficina/"
+},
+
     {
         id: 4,
         titulo: "Habilidades para la vida",
@@ -151,7 +154,8 @@ const cursos = [
         categoria: "tecnologia",
         icono: "fa-solid fa-computer",
         enlace: null
-    }
+    },
+ 
 ];
 
 
