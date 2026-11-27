@@ -128,8 +128,21 @@ const cursos = [
         "https://barakacorporacion2-netizen.github.io/Aseador-de-oficina/"
 },
 
+
     {
         id: 4,
+        titulo: "Mesero",
+        descripcion:
+            "Aprenda técnicas de servicio en mesa, atención al cliente, organización del área de trabajo y buenas prácticas para ofrecer un servicio de calidad.",
+        categoria: "formacion",
+        icono: "fa-solid fa-utensils",
+        enlace:
+            "https://barakacorporacion2-netizen.github.io/Curso-Mesero/"
+    },
+
+
+    {
+        id: 5,
         titulo: "Habilidades para la vida",
         descripcion:
             "Espacios de formación orientados al fortalecimiento personal, la confianza, la comunicación y el desarrollo de capacidades.",
@@ -138,7 +151,7 @@ const cursos = [
         enlace: null
     },
     {
-        id: 5,
+        id: 6,
         titulo: "Formación para el desarrollo",
         descripcion:
             "Programas de formación diseñados para fortalecer conocimientos y capacidades que puedan abrir nuevas posibilidades.",
@@ -147,7 +160,7 @@ const cursos = [
         enlace: null
     },
     {
-        id: 6,
+        id: 7,
         titulo: "Competencias digitales",
         descripcion:
             "Aprenda herramientas y conceptos digitales para desenvolverse con mayor seguridad en entornos académicos, laborales y productivos.",
